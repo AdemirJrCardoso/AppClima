@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Buscar Cidade</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="cidadeForm" (ngSubmit)="buscaCidade()">
+    <ion-item>
+      <ion-label floating>Buscar Cidade</ion-label>
+      <ion-input type="text" formControlName="cidade"></ion-input>
+    </ion-item>
+
+    <button class="botaobusca" ion-button type="submit" [disabled]="cidadeForm.invalid">Buscar</button>
+  </form>
+
+  <climate-card [cityName]="apiData?.cityName" [weather]="apiData?.weather" [temp]="apiData?.temperature"></climate-card>
+
+</ion-content>

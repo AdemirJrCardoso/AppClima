@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Buscar Coordenadas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="coordenadaForm" (ngSubmit)="buscaCoordenada()">
+    <ion-item>
+      <ion-label floating>Longitude</ion-label>
+      <ion-input type="number" inputmode="numeric" formControlName="longitude"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Latitude</ion-label>
+      <ion-input type="number" inputmode="numeric" formControlName="latitude"></ion-input>
+    </ion-item>
+
+    <button class="botaobusca" ion-button type="submit" [disabled]="coordenadaForm.invalid">Buscar</button>
+  </form>
+
+  <climate-card [cityName]="apiData?.cityName" [weather]="apiData?.weather" [temp]="apiData?.temperature"></climate-card>
+
+</ion-content>
