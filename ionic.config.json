@@ -1,5 +1,7 @@
 {
   "name": "AppClima",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
