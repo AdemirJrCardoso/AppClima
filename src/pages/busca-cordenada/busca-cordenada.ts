@@ -1,7 +1,6 @@
-import { ERROR_COMPONENT_TYPE } from '@angular/compiler';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CoordenadaProvider } from '../../providers/coordenada/coordenada';
 
 /**
@@ -29,11 +28,10 @@ export class BuscaCordenadaPage {
     public navParams: NavParams,
     private formBuilder: FormBuilder,
     private coordenadaProvider: CoordenadaProvider,
-    private toastCtrl: ToastController
   ) {
     this.coordenadaForm = this.formBuilder.group({
-      latitude: [-29.0979, Validators.required],
-      longitude: [-49.6401, Validators.required]
+      latitude: ["", Validators.required],
+      longitude: ["", Validators.required]
     })
   }
 

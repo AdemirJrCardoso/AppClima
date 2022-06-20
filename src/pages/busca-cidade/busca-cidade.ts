@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { CoordenadaProvider } from '../../providers/coordenada/coordenada';
 
 /**
@@ -26,10 +26,9 @@ export class BuscaCidadePage {
     public navParams: NavParams,
     private formBuilder: FormBuilder,
     private coordenadaProvider: CoordenadaProvider,
-    private toastCtrl: ToastController
   ) {
     this.cidadeForm = this.formBuilder.group({
-      cidade: ["Sombrio", [Validators.required, Validators.minLength(3)]]
+      cidade: ["", [Validators.required, Validators.minLength(3)]]
     })
   }
 
