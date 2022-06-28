@@ -11,9 +11,21 @@
       <ion-input type="text" formControlName="cidade"></ion-input>
     </ion-item>
 
-    <button class="botaobusca" ion-button type="submit" [disabled]="cidadeForm.invalid">Buscar</button>
+    <button
+      class="botaobusca"
+      ion-button
+      type="submit"
+      [disabled]="cidadeForm.invalid"
+    >
+      Buscar
+    </button>
   </form>
 
-  <climate-card [cityName]="apiData?.cityName" [weather]="apiData?.weather" [temp]="apiData?.temperature"></climate-card>
-
+  <climate-card
+    *ngIf="apiData"
+    [cityName]="apiData?.cityName"
+    [weather]="apiData?.weather"
+    [temp]="apiData?.temperature"
+    [icon]="apiData?.icon"
+  ></climate-card>
 </ion-content>

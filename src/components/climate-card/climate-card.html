@@ -1,9 +1,15 @@
 <ion-card>
-  <ion-card-header>
+  <ion-card-header class="header">
     {{cityName ? cityName : "Pesquise Cidade"}}
   </ion-card-header>
   <ion-card-content>
-    {{weather | titlecase}}<br>
-    Temperatura Media {{temp}}
+    <div>
+      {{weather | titlecase}}<br />
+      Temperatura Media {{temp}} °C
+    </div>
+    <img
+      class="icon"
+      [src]="'https://openweathermap.org/img/wn/'+ icon + '@2x.png'"
+    />
   </ion-card-content>
 </ion-card>

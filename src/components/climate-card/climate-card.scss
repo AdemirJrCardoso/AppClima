@@ -1,3 +1,10 @@
 climate-card {
+  .icon {
+    width: 80px;
+  }
 
+  ion-card-content {
+    display: flex;
+    align-items: center;
+  }
 }

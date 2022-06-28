@@ -1,9 +1,13 @@
 page-busca-cidade {
-    .botaobusca{
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        margin-top: 15px;
-    }
+  text-transform: uppercase;
+  .botaobusca {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 15px;
+  }
+  climate-card {
+    display: flex;
+  }
 }

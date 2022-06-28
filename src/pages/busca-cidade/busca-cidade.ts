@@ -1,7 +1,7 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { CoordenadaProvider } from '../../providers/coordenada/coordenada';
+import { Component } from "@angular/core";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { IonicPage, NavController, NavParams } from "ionic-angular";
+import { CoordenadaProvider } from "../../providers/coordenada/coordenada";
 
 /**
  * Generated class for the BuscaCidadePage page.
@@ -12,39 +12,37 @@ import { CoordenadaProvider } from '../../providers/coordenada/coordenada';
 
 @IonicPage()
 @Component({
-  selector: 'page-busca-cidade',
-  templateUrl: 'busca-cidade.html',
+  selector: "page-busca-cidade",
+  templateUrl: "busca-cidade.html",
 })
 export class BuscaCidadePage {
-
   cidadeForm: FormGroup;
-  apiData:any
-
+  apiData: any;
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     private formBuilder: FormBuilder,
-    private coordenadaProvider: CoordenadaProvider,
+    private coordenadaProvider: CoordenadaProvider
   ) {
     this.cidadeForm = this.formBuilder.group({
-      cidade: ["", [Validators.required, Validators.minLength(3)]]
-    })
+      cidade: ["", [Validators.required, Validators.minLength(3)]],
+    });
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad BuscaCidadePage');
+    console.log("ionViewDidLoad BuscaCidadePage");
   }
 
   buscaCidade() {
-    const city = this.cidadeForm.value.cidade
-    this.coordenadaProvider.getClimateByName(city)
-      .then(response => {
-        console.log(response)
-        this.apiData = response
+    const city = this.cidadeForm.value.cidade;
+    this.coordenadaProvider
+      .getClimateByName(city)
+      .then((response) => {
+        this.apiData = response;
       })
-      .catch(error => {
-        this.coordenadaProvider.showMessage(error)
-      })
+      .catch((error) => {
+        this.coordenadaProvider.showMessage(error);
+      });
   }
 }

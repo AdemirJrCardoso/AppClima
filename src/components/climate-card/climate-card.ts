@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input } from "@angular/core";
 
 /**
  * Generated class for the ClimateCardComponent component.
@@ -7,17 +7,14 @@ import { Component, Input } from '@angular/core';
  * Components.
  */
 @Component({
-  selector: 'climate-card',
-  templateUrl: 'climate-card.html'
+  selector: "climate-card",
+  templateUrl: "climate-card.html",
 })
 export class ClimateCardComponent {
+  @Input("cityName") cityName: string;
+  @Input("weather") weather: string;
+  @Input("temp") temp: number;
+  @Input("icon") icon: string;
 
-  @Input("cityName") cityName: string
-  @Input("weather") weather: string
-  @Input("temp") temp: number
-
-  constructor() {
-    
-  }
-
+  constructor() {}
 }
